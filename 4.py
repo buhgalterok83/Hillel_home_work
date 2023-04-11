@@ -10,3 +10,11 @@ if email.count('@') == 1 and email.count('.') == 1:
         print(False)
 else:
     print(False)
+# test@test.com
+# qqq@fddf@f.b
+# test.com
+# test@test.com.
+# @test.com
+# test@.com
+# test.com@
+# test.com@com

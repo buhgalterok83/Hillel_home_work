@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6697a83f-f98f-4dc2-b732-09a76f9d9fc8" name="Changes" comment="Home work1">
+    <list default="true" id="6697a83f-f98f-4dc2-b732-09a76f9d9fc8" name="Changes" comment="Home work_change_validation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/4.py" beforeDir="false" afterPath="$PROJECT_DIR$/4.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,7 +219,21 @@
       <option name="project" value="LOCAL" />
       <updated>1681162171067</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Home work_change_validation">
+      <created>1681206229304</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1681206229304</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Home work_change_validation">
+      <created>1681206349181</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1681206349181</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -266,6 +279,7 @@
     <MESSAGE value="Home work3" />
     <MESSAGE value="Home work4" />
     <MESSAGE value="Home work1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Home work1" />
+    <MESSAGE value="Home work_change_validation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Home work_change_validation" />
   </component>
 </project>
