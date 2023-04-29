@@ -1,20 +1,10 @@
-email = input("Enter your email adress: ")
-
-if email.count('@') == 1 and email.count('.') == 1:
-    if email.index("@") < email.index('.'):
-        if email[0] != "@" and email[-1] != ".":
-            print(True)
+def linearize_list(lst):
+    result = []
+    for elem in lst:
+        if isinstance(elem, list):
+            result.extend(linearize_list(elem))
         else:
-            print(False)
-    else:
-        print(False)
-else:
-    print(False)
-# test@test.com
-# qqq@fddf@f.b
-# test.com
-# test@test.com.
-# @test.com
-# test@.com
-# test.com@
-# test.com@com
+            result.append(elem)
+    return result
+lst = [1, 2, [3, 4, [5, 6], 7], 8, [9, [10]], 11]
+print(linearize_list(lst))  # [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
