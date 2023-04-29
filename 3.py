@@ -1,10 +1,8 @@
-s = "aab qq c badcc a qqqqqaqqqqaa tpara"
+from datetime import datetime, timedelta
 
-words = []
-for word in s.split():
-    if word.lower().count('a') == 2:
-        words.append(word)
+start_date = datetime(2023, 3, 27, 19, 15)
+lecture_count = 32
 
-result = ' '.join(words).title()
-
-print(result)
+for i in range(1, lecture_count + 1):
+    lecture_date = start_date + timedelta(days=(i - 1) * 3)
+    print(f"Lecture {i:2}: {lecture_date.strftime('%d %b %Y %H:%M')}")
