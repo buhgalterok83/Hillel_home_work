@@ -1,14 +1,23 @@
-import re
+def custom_zip(*sequences, full=False, default=None):
+    if not full:
+        length = min(len(seq) for seq in sequences)
+    else:
+        length = max(len(seq) for seq in sequences)
+    result = []
+    for i in range(length):
+        values = []
+        for seq in sequences:
+            if i < len(seq):
+                values.append(seq[i])
+            elif default is not None:
+                values.append(default)
+        result.append(tuple(values))
+    return result
 
-def generate_sentence(text: str) -> str:
-    sentences = [s.strip() for s in re.split('[.?!]', text) if s.strip()]
-    words = [s.split()[0].lower() for s in sentences]
-    sentence = ' '.join(words)
-    sentence = sentence.capitalize()
-    sentence += '.'
-    return sentence
+seq1 = [1, 2, 3, 4, 5]
+seq2 = [9, 8, 7]
+print(custom_zip(seq1, seq2))
 
-text = """Happy New Year! Wish you good luck.
-Please write me how are you doing? Goodbye...
-"""
-print(generate_sentence(text)) 
+
+print(custom_zip(seq1, seq2, full=True, default="Q"))
+
