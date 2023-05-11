@@ -11,13 +11,14 @@ def custom_zip(*sequences, full=False, default=None):
                 values.append(seq[i])
             elif default is not None:
                 values.append(default)
+            else:
+                values.append(None)
         result.append(tuple(values))
     return result
 
-seq1 = [1, 2, 3, 4, 5]
-seq2 = [9, 8, 7]
+
+seq1 = [1,  2, 3, 4, 5]
+seq2 = [9,   8, 7]
+
 print(custom_zip(seq1, seq2))
-
-
-print(custom_zip(seq1, seq2, full=True, default="Q"))
-
+print(custom_zip(seq1, seq2, full=True))
