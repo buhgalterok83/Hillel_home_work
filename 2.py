@@ -27,16 +27,15 @@
           <mxGeometry x="30" y="120" width="150" height="20" as="geometry" />
         </mxCell>
         
-        <mxCell id="addStudent" value="+ add_student(student: Student)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000
-000;" vertex="1" parent="course">
-<mxGeometry x="30" y="160" width="150" height="20" as="geometry" />
-</mxCell>
+        <mxCell id="addStudent" value="+ add_student(student: Student)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;" vertex="1" parent="course">
+          <mxGeometry x="30" y="160" width="150" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="removeStudent" value="+ remove_student(student: Student)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;" vertex="1" parent="course">
+          <mxGeometry x="30" y="190" width="150" height="20" as="geometry" />
+        </mxCell>
 
-    <mxCell id="removeStudent" value="+ remove_student(student: Student)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;" vertex="1" parent="course">
-      <mxGeometry x="30" y="190" width="150" height="20" as="geometry" />
-    </mxCell>
-    
-    <!-- Professor -->
+        <!-- Professor -->
     <mxCell id="professor" value="Professor" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;" vertex="1" parent="1">
       <mxGeometry x="220" y="240" width="120" height="80" as="geometry" />
     </mxCell>
@@ -67,18 +66,16 @@
     </mxCell>
     
     <mxCell id="coursesEnrolled" value="- courses_enrolled: list&lt;Course&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;" vertex="1" parent="student">
-      <mxGeometry x="30" y="
-60" width="150" height="20" as="geometry" />
-</mxCell>
-
+      <mxGeometry x="30" y="60" width="150" height="20" as="geometry" />
+    </mxCell>
+    
     <mxCell id="enrollCourse" value="+ enroll_course(course: Course)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;" vertex="1" parent="student">
       <mxGeometry x="30" y="120" width="150" height="20" as="geometry" />
     </mxCell>
     
     <mxCell id="dropCourse" value="+ drop_course(course: Course)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;" vertex="1" parent="student">
-      <mxGeometry x="30" y="150" width="150" height="20" as="geometry" />
-    </mxCell>
-    
+<mxGeometry x="30" y="150" width="150" height="20" as="geometry" />
+</mxCell>
     <!-- Relationships -->
     <mxCell id="course-professor" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="course" target="professor">
       <mxGeometry relative="1" as="geometry" />
@@ -98,5 +95,4 @@
     
   </root>
 </mxGraphModel>
-  </diagram>
-</mxfile>
+
