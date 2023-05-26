@@ -54,7 +54,7 @@ for dns in dns_list:
 
 
 
-print("Total Excellent Students (10+):", total_excellent_10)
-print("Total Outstanding Students (11+):", total_excellent_11)
-print("Total Students in 11th parallel:", total_students_11)
+print("Total Schoolboy (10+):", total_excellent_10)
+print("Total Schoolboy (11+):", total_excellent_11)
+print("Total Schoolboy in 11th parallel:", total_students_11)
 
