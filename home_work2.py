@@ -1,73 +1,60 @@
-class Car:
-    """Клас автомобіля."""
+from typing import List
 
-    num_wheels = 4  # классове поле
+# Абстрактний клас стратегії сортування
+class SortStrategy:
+    def sort(self, data: List[int]) -> List[int]:
+        raise NotImplementedError()
 
-    def __init__(self, make, model, year, weight):
-        """Ініціалізація атрибутів машини."""
-        self.make = make
-        self.model = model
-        self.year = year
-        self.weight = weight
-        self.is_running = False
+# Конкретна стратегія сортування "Сортування бульбашкою"
+class BubbleSortStrategy(SortStrategy):
+    def sort(self, data: List[int]) -> List[int]:
+        # Реалізація сортування бульбашкою
+        sorted_data = data.copy()
+        n = len(sorted_data)
+        for i in range(n - 1):
+            for j in range(0, n - i - 1):
+                if sorted_data[j] > sorted_data[j + 1]:
+                    sorted_data[j], sorted_data[j + 1] = sorted_data[j + 1], sorted_data[j]
+        return sorted_data
 
-    def start(self):
-        """Завести автомобіль."""
-        if not self.is_running:
-            self.is_running = True
-            print(f"The {self.make} {self.model} is now running.")
+# Конкретна стратегія сортування "Сортування вибором"
+class SelectionSortStrategy(SortStrategy):
+    def sort(self, data: List[int]) -> List[int]:
+        # Реалізація сортування вибором
+        sorted_data = data.copy()
+        n = len(sorted_data)
+        for i in range(n):
+            min_idx = i
+            for j in range(i + 1, n):
+                if sorted_data[j] < sorted_data[min_idx]:
+                    min_idx = j
+            sorted_data[i], sorted_data[min_idx] = sorted_data[min_idx], sorted_data[i]
+        return sorted_data
 
-    def stop(self):
-        """Зупинити автомобіль."""
-        if self.is_running:
-            self.is_running = False
-            print(f"The {self.make} {self.model} has been stopped.")
+# Клієнтський клас, що використовує стратегію сортування
+class SortClient:
+    def __init__(self, strategy: SortStrategy):
+        self.strategy = strategy
 
-    @classmethod
-    def get_num_wheels(cls):
-        """Повертає кількість коліс у класі автомобіля."""
-        return cls.num_wheels
+    def set_strategy(self, strategy: SortStrategy):
+        self.strategy = strategy
 
-    @staticmethod
-    def convert_weight_to_pounds(weight_in_kg):
-        """Конвертує вагу автомобіля з кілограмів в фунти."""
-        return weight_in_kg * 2.20462
+    def sort_data(self, data: List[int]) -> List[int]:
+        return self.strategy.sort(data)
 
+# Приклад використання
+data = [5, 2, 8, 1, 9]
 
-class Driver:
-    """Клас водія."""
+# Створення клієнтського об'єкта з початковою стратегією сортування бульбашкою
+client = SortClient(BubbleSortStrategy())
 
-    def __init__(self, name, age, driving_experience):
-        """Ініціалізуємо атрибути водія."""
-        self.name = name
-        self.age = age
-        self.driving_experience = driving_experience
+# Сортування даних з поточною стратегією
+sorted_data = client.sort_data(data)
+print("Сортування бульбашкою:", sorted_data)
 
-    def start_car(self, car):
-        """Завести авто."""
-        car.start()
+# Зміна стратегії на сортування вибором
+client.set_strategy(SelectionSortStrategy())
 
-    def stop_car(self, car):
-        """Зупинити авто."""
-        car.stop()
-
-
-# Створюємо екземпляри класів
-car1 = Car("Toyota", "Corolla", 2022, 1200)
-car2 = Car("Honda", "Accord", 2022, 1400)
-driver1 = Driver("John", 30, 10)
-driver2 = Driver("Anna", 25, 5)
-
-# Взаємодія з об'єктами
-driver1.start_car(car1)
-driver2.start_car(car2)
-driver1.stop_car(car1)
-driver2.stop_car(car2)
-
-# Виклик методу класу
-print(Car.get_num_wheels())  # Виведе: 4
-
-# Виклик статичного методу
-weight_in_kg = 1200
-weight_in_pounds = Car.convert_weight_to_pounds(weight_in_kg)
-print(f"The weight of the car is {weight_in_pounds} pounds.")  # Виведе: The weight of the car is 2645.5474 pounds.
+# Повторне сортування даних з новою стратегією
+sorted_data = client.sort_data(data)
+print("Сортування вибором:", sorted_data)
