@@ -1,99 +1,177 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<mxfile host="app.diagrams.net" modified="2023-05-16T12:00:00.000Z" agent="5.0 (Windows)">
-  <diagram name="Page-1" id="your-diagram-id">
-    <mxGraphModel dx="1060" dy="500" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
-      <root>
-        <mxCell id="0" />
-        <mxCell id="1" parent="0" />
-        
-        <!-- Course -->
-        <mxCell id="course" value="Course" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;" vertex="1" parent="1">
-          <mxGeometry x="220" y="80" width="120" height="80" as="geometry" />
-        </mxCell>
-        
-        <mxCell id="courseCode" value="- course_code: string" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;" vertex="1" parent="course">
-          <mxGeometry x="30" y="30" width="150" height="20" as="geometry" />
-        </mxCell>
-        
-        <mxCell id="courseName" value="- course_name: string" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;" vertex="1" parent="course">
-          <mxGeometry x="30" y="60" width="150" height="20" as="geometry" />
-        </mxCell>
-        
-        <mxCell id="courseProfessor" value="- professor: Professor" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;" vertex="1" parent="course">
-          <mxGeometry x="30" y="90" width="150" height="20" as="geometry" />
-        </mxCell>
-        
-        <mxCell id="students" value="- students: list&lt;Student&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;" vertex="1" parent="course">
-          <mxGeometry x="30" y="120" width="150" height="20" as="geometry" />
-        </mxCell>
-        
-        <mxCell id="addStudent" value="+ add_student(student: Student)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;" vertex="1" parent="course">
-          <mxGeometry x="30" y="160" width="150" height="20" as="geometry" />
-        </mxCell>
-        
-        <mxCell id="removeStudent" value="+ remove_student(student: Student)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;" vertex="1" parent="course">
-          <mxGeometry x="30" y="190" width="150" height="20" as="geometry" />
-        </mxCell>
-    <!-- Professor -->
-    <mxCell id="professor" value="Professor" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;" vertex="1" parent="1">
-      <mxGeometry x="220" y="300" width="120" height="80" as="geometry" />
-    </mxCell>
-    
-    <mxCell id="professorName" value="- name: string" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;" vertex="1" parent="professor">
-      <mxGeometry x="30" y="30" width="150" height="20" as="geometry" />
-    </mxCell>
-    
-    <mxCell id="coursesTaught" value="- courses_taught: list&lt;Course&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;" vertex="1" parent="professor">
-      <mxGeometry x="30" y="60" width="150" height="20" as="geometry" />
-    </mxCell>
-    
-    <mxCell id="addCourse" value="+ add_course(course: Course)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;" vertex="1" parent="professor">
-      <mxGeometry x="30" y="120" width="150" height="20" as="geometry" />
-    </mxCell>
-    
-    <mxCell id="removeCourse" value="+ remove_course(course: Course)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;" vertex="1" parent="professor">
-      <mxGeometry x="30" y="150" width="150" height="20" as="geometry" />
-    </mxCell>
-    
-    <!-- Student -->
-    <mxCell id="student" value="Student" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;" vertex="1" parent="1">
-      <mxGeometry x="220" y="480" width="120" height="80" as="geometry" />
-    </mxCell>
-    
-    <mxCell id="studentName" value="- name: string" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;" vertex="1" parent="student">
-      <mxGeometry x="30" y="30" width="150" height="20" as="geometry" />
-    </mxCell>
-    
-    <mxCell id="coursesEnrolled" value="- courses_enrolled: list&lt;Course&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;" vertex="1" parent="student">
-      <mxGeometry x="30" y="60" width="150" height="20" as="geometry" />
-    </mxCell>
-    
-    <mxCell id="enrollCourse" value="+ enroll_course(course: Course)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;" vertex="1" parent="student">
-      <mxGeometry x="30" y="120" width="150" height="20" as="geometry"/>
-    </mxCell>
-    <mxCell id="dropCourse" value="+ drop_course(course: Course)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;" vertex="1" parent="student">
-      <mxGeometry x="30" y="150" width="150" height="20" as="geometry" />
-    </mxCell>
-    
-    <!-- Relationships -->
-    <mxCell id="course-professor" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="course" target="professor">
-      <mxGeometry relative="1" as="geometry" />
-    </mxCell>
-    
-    <mxCell id="course-students" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="course" target="students">
-      <mxGeometry relative="1" as="geometry" />
-    </mxCell>
-    
-    <mxCell id="professor-coursesTaught" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="professor" target="coursesTaught">
-      <mxGeometry relative="1" as="geometry" />
-    </mxCell>
-    
-    <mxCell id="student-coursesEnrolled" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="student" target="coursesEnrolled">
-      <mxGeometry relative="1" as="geometry" />
-    </mxCell>
-    
-  </root>
-</mxGraphModel>
- </diagram>
-</mxfile>
+import pytest
+import random
+
+class Pixel:
+    def __init__(self, red: int, green: int, blue: int):
+        if not all(0 <= c <= 255 for c in (red, green, blue)):
+            raise ValueError("Component values must be in the range [0, 255]")
+        self._red = red
+        self._green = green
+        self._blue = blue
+
+    @property
+    def red(self):
+        return self._red
+
+    @property
+    def green(self):
+        return self._green
+
+    @property
+    def blue(self):
+        return self._blue
+
+    def __add__(self, other):
+        if not isinstance(other, Pixel):
+            raise TypeError("Unsupported operand type for +: 'Pixel' and '{}'".format(type(other).__name__))
+        red = min(self._red + other._red, 255)
+        green = min(self._green + other._green, 255)
+        blue = min(self._blue + other._blue, 255)
+        return Pixel(red, green, blue)
+
+    def __sub__(self, other):
+        if not isinstance(other, Pixel):
+            raise TypeError("Unsupported operand type for -: 'Pixel' and '{}'".format(type(other).__name__))
+        red = max(self._red - other._red, 0)
+        green = max(self._green - other._green, 0)
+        blue = max(self._blue - other._blue, 0)
+        return Pixel(red, green, blue)
+
+    def __mul__(self, other):
+        if isinstance(other, (int, float)):
+            if other <= 0:
+                raise ValueError("Multiplier must be greater than 0")
+            red = min(int(self._red * other), 255)
+            green = min(int(self._green * other), 255)
+            blue = min(int(self._blue * other), 255)
+            return Pixel(red, green, blue)
+        raise TypeError("Unsupported operand type for *: 'Pixel' and '{}'".format(type(other).__name__))
+
+    def __rmul__(self, other):
+        return self.__mul__(other)
+
+    def __truediv__(self, other):
+        if isinstance(other, (int, float)):
+            if other <= 0:
+                raise ValueError("Divisor must be greater than 0")
+            red = min(int(self._red / other), 255)
+            green = min(int(self._green / other), 255)
+            blue = min(int(self._blue / other), 255)
+            return Pixel(red, green, blue)
+        raise TypeError("Unsupported operand type for /: 'Pixel' and '{}'".format(type(other).__name__))
+
+    def __eq__(self, other):
+        if isinstance(other, Pixel):
+            return (self._red, self._green, self._blue) == (other._red, other._green, other._blue)
+        return False
+
+    def __str__(self):
+        return f"Pixel object\n\tRed: {self._red}\n\tGreen: {self._green}\n\tBlue: {self._blue}"
+
+    def __repr__(self):
+        return f"Pixel({self._red}, {self._green}, {self._blue})"
+
+    def get_pixel_near(self, area: int):
+        import random
+        red = random.randint(max(0, self._red - area), min(255, self._red + area))
+        green = random.randint(max(0, self._green - area), min(255, self._green + area))
+        blue = random.randint(max(0, self._blue - area), min(255, self._blue + area))
+        return Pixel(red, green, blue)
+
+
+
+@pytest.fixture
+def pixel():
+    return Pixel(100, 150, 200)
+
+
+def test_pixel_creation():
+    with pytest.raises(ValueError):
+        Pixel(-10, 150, 200)  # Component value less than 0
+    with pytest.raises(ValueError):
+        Pixel(300, 150, 200)  # Component value greater than 255
+    with pytest.raises(TypeError):
+        Pixel(100, "green", 200)  # Non-integer component value
+
+
+def test_pixel_properties(pixel):
+    assert pixel.red == 100
+    assert pixel.green == 150
+    assert pixel.blue == 200
+
+
+def test_pixel_addition(pixel):
+    other = Pixel(50, 70, 90)
+    result = pixel + other
+    assert result.red == 150
+    assert result.green == 220
+    assert result.blue == 255
+
+
+def test_pixel_subtraction(pixel):
+    other = Pixel(50, 70, 90)
+    result = pixel - other
+    assert result.red == 50
+    assert result.green == 80
+    assert result.blue == 110
+
+
+def test_pixel_multiplication(pixel):
+    result = pixel * 1.5
+    assert result.red == 150
+    assert result.green == 225
+    assert result.blue == 255
+
+    result = 2 * pixel
+    assert result.red == 200
+    assert result.green == 255
+    assert result.blue == 255
+
+    with pytest.raises(TypeError):
+        pixel * "2"  # Invalid multiplier type
+
+    with pytest.raises(ValueError):
+        pixel * 0  # Multiplier less than or equal to 0
+
+
+def test_pixel_division(pixel):
+    result = pixel / 2
+    assert result.red == 50
+    assert result.green == 75
+    assert result.blue == 100
+
+    with pytest.raises(TypeError):
+        pixel / "2"  # Invalid divisor type
+
+    with pytest.raises(ValueError):
+        pixel / 0  # Divisor less than or equal to 0
+
+
+def test_pixel_equality():
+    pixel1 = Pixel(100, 150, 200)
+    pixel2 = Pixel(100, 150, 200)
+    pixel3 = Pixel(200, 150, 100)
+
+    assert pixel1 == pixel2
+    assert pixel1 != pixel3
+
+
+def test_pixel_str_representation(pixel):
+    assert str(pixel) == "Pixel object\n\tRed: 100\n\tGreen: 150\n\tBlue: 200"
+
+
+def test_pixel_repr_representation(pixel):
+    assert repr(pixel) == "Pixel(100, 150, 200)"
+
+
+def test_get_pixel_near(pixel):
+    random.seed(42)  # For consistent results in the test
+    nearby_pixel = pixel.get_pixel_near(20)
+    assert 80 <= nearby_pixel.red <= 120
+    assert 130 <= nearby_pixel.green <= 170
+    assert 180 <= nearby_pixel.blue <= 220
+
+
+if __name__ == "__main__":
+    pytest.main()
 
