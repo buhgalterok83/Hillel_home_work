@@ -77,7 +77,6 @@ class Pixel:
         blue = random.randint(max(0, self._blue - area), min(255, self._blue + area))
         return Pixel(red, green, blue)
 
-
 @pytest.fixture
 def pixel():
     return Pixel(100, 150, 200)
